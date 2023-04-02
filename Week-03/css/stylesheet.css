@@ -1,31 +1,50 @@
 body {
-    font-family: 'Roboto';
+    font-family: Arial;
     font-size: 18px;
 }
 
+.aligned {
+    display: flex;
+    align-items: center;
+}
+
+.hovered:hover {
+    color: #49A37B;
+}
+
+.selected {
+    color: #49A37B;
+}
+
+.container {
+    float:;
+    width: 1500px;
+    left: 340px;
+    top: ;
+}
+
 header {
-    width: 1627px;
     position: fixed;
-    left: 238px;
+    width: 1606px;
+    height: 130px;
+    left: 258px;
     background-color: #373867;
+}
+
+header img {
+
 }
 
 aside {
     position: fixed;
     padding: 10px 40px 550px;
     background-color: #373867;
-    color: #C4C4C4;
     font-weight: 700;
     line-height: 50px;
-}
-
-.container {
-    position: absolute;
-    left: 400px;
+    color: #C4C4C4;
 }
 
 aside h2 {
-    color:  ;
     font-size: 35px;
 }
 aside h3 {
@@ -36,10 +55,17 @@ aside p {
     font-size: 14px;
 }
 
-.selected {
-    color: #49A37B;
+.gym h1 {
+    font-size: 60px;
 }
 
-.round-edges {
-    border-radius: 8px;
+.gym h2 {
+    font-size: 25px;
 }
+
+.gym img {
+    float: right;
+    width: 700px;
+    height: 570px;
+    border-radius: 22px;
+} 
