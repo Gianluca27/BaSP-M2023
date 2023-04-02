@@ -1,0 +1,45 @@
+body {
+    font-family: 'Roboto';
+    font-size: 18px;
+}
+
+header {
+    width: 1627px;
+    position: fixed;
+    left: 238px;
+    background-color: #373867;
+}
+
+aside {
+    position: fixed;
+    padding: 10px 40px 550px;
+    background-color: #373867;
+    color: #C4C4C4;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+.container {
+    position: absolute;
+    left: 400px;
+}
+
+aside h2 {
+    color:  ;
+    font-size: 35px;
+}
+aside h3 {
+    font-size: 16px;
+}
+
+aside p {
+    font-size: 14px;
+}
+
+.selected {
+    color: #49A37B;
+}
+
+.round-edges {
+    border-radius: 8px;
+}
