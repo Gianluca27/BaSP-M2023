@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    align-self: center;
+    height: 80%;
+    width: 90%;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 2px solid #D9D9D9;
+}
+
+h1 {
+    text-align: center;
+    padding: 25px 0;
+    font-size: 36px;
+    font-weight: 700;
+    color: #5F5F7E;
+}
+
+h2 {
+    padding: 25px 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2F3058;
+}
+
+h3 {
+    font-size: 20px
+}
+
+p {
+    font-size: 18px;
+}
