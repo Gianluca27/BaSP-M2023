@@ -3,6 +3,7 @@ header {
     position: sticky;
     display: flex;
     top: 0;
+    width: 100%;
     background-color: #373867;
 }
 
@@ -10,14 +11,26 @@ header {
     margin-right: 20px;
 }
 
-.menu img {
-    width: 80%;
-}
-
 .alt-logo img {
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
-@media only screen and (min-height: 1024px){
+@media only screen and (min-width: 1024px) {
+    header {
+        position: -webkit-sticky;
+        position: sticky;
+        display: flex;
+        top: 0;
+        width: 80%;
+        margin-left: 20%;
+        background-color: #373867;
+    }
     
+    .menu {
+        margin-right: 20px;
+    }
+    
+    .alt-logo img {
+        padding: 20px 0;
+    }    
 }
