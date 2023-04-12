@@ -14,12 +14,12 @@ header {
     padding: 20px 0;
 }
 
-@media only screen and (min-width: 1024px) { 
+@media only screen and (min-width: 1024px) {
     .menu {
         margin-right: 20px;
     }
     
     .alt-logo img {
         padding: 20px 0;
-    }    
+    }
 }

@@ -46,14 +46,14 @@ main {
 
 form label {
     display: block;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: 600;
     color: #373867;
 }
 
 form p {
     display: inline;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .personal-info input {
@@ -163,15 +163,15 @@ form button {
 
 @media only screen and (min-width: 600px) {
     .contact-us label {
-        font-size: 20px;
+        font-size: 1,5rem;
     }
 
     form p {
-        font-size: 20px;
+        font-size: 1,5rem;
     }
 
     .gym-section li {
-        font-size: 20px;
+        font-size: 1,5rem;
     }
 }
 
@@ -203,7 +203,6 @@ form button {
 
     .meet-us article {
         width: 50%;
-        
     }
 
     .container {
@@ -220,11 +219,18 @@ form button {
         width: 45%;
     }
 
+    .submit, .reset {
+        width: 20%;
+    }
+
+    .buttons {
+        margin-right: 45px;
+        justify-content: right;
+    }
+
     .paragraph-two {
         width: 80%;
     }
-
-
 
     .gym-section article {
         width: 45%;
