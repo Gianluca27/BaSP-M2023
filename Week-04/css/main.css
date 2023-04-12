@@ -3,9 +3,8 @@ main {
     flex-direction: column;
 }
 
-.us article {
-    display: flex;
-    flex-direction: column-reverse;
+.us h1 {
+    text-align: center;
 }
 
 .us img {
@@ -23,20 +22,16 @@ main {
 }
 
 .meet-us article {
+    display: flex;
+    max-height: 20%;
     margin-bottom: 50px;
 }
 
-.meet-us article {
-    display: flex;
-}
-
 .meet-us div {
-    width: 70%;
     align-self: center;
 }
 
 .meet-us img {
-    max-width: 50%;
     margin-right: 5px;
 }
 
@@ -61,7 +56,7 @@ form p {
     font-size: 16px;
 }
 
-.info input {
+.personal-info input {
     width: 95%;
     height: 30px;
     margin: 7px 0 17px;
@@ -114,6 +109,12 @@ form button {
     border: 1px solid #373867;
 }
 
+.about-us img {
+    width: 30%;
+    height: 30%;
+    border-radius: 8px;
+}
+
 .about-us h3 {
     padding: 10px 0;
     font-weight: 700;
@@ -125,26 +126,20 @@ form button {
     color: #6D6D6D;
 }
 
-.thoughts div {
+.thoughts {
     display: flex;
-    margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
-.thoughts img {
-    width: 38%;
-    height: 38%;
-    margin-right: 5px;
+.paragraph {
+    margin-left: 5px;
+    width: 60%;
+    height: 40%;
 }
 
 .family {
     display: flex;
 }
-
-.family img {
-    width: 45%;
-    height: 45%;
-}
-
 .gym-section {
     border: none;
 }
@@ -181,11 +176,58 @@ form button {
 }
 
 @media only screen and (min-width: 1024px) {
-    .us {
-        display: flex;
+    main {
+        width: 80%;
+        margin-left: 20%;
     }
-    
-    .us img {
 
+    .us h1 {
+        text-align: left;
+    }
+
+    .us img {
+        width: 40%;
+        height: 40%;
+    }
+
+    .us article {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .us div {
+        width: 60%;
+    }
+
+    .meet-us article {
+        width: 50%;
+        
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .personal-info {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .personal-info div {
+        width: 45%;
+    }
+
+    .paragraph-two {
+        width: 80%;
+    }
+
+
+
+    .gym-section article {
+        width: 45%;
+        margin-left: 20px;
     }
 }
