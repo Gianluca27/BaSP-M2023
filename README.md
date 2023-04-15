@@ -25,5 +25,12 @@ resolution of device that is opening the page. Things were a bit easier than las
 week but it was still very challenging and interesting to learn a new way of giving
 style to a webpage.
 
+Github Pages: https://gianluca27.github.io/BaSP-M2023/Week-04/index.html
+
+## Week-05
+
+
+Github Pages: https://gianluca27.github.io/BaSP-M2023/Week-05/index.html
+
 ## Authors
 Gianluca Agrano
