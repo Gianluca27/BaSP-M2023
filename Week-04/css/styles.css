@@ -21,7 +21,7 @@ h1 {
 
 h2 {
     padding: 25px 0;
-    font-size: 1,5rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #2F3058;
 }
@@ -52,7 +52,7 @@ p {
     }
 
     p {
-        font-size: 1,5rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -60,12 +60,12 @@ p {
     section {
         width: 95%;
     }
-    
+
     h1 {
         font-size: 4rem;
     }
 
     p {
-        font-size: 1,5rem;
+        font-size: 1.5rem;
     }
 }

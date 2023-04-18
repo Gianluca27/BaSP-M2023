@@ -33,6 +33,7 @@ main {
 
 .meet-us img {
     margin-right: 5px;
+    max-height: 150px;
 }
 
 .meet-us h3 {
@@ -163,15 +164,15 @@ form button {
 
 @media only screen and (min-width: 600px) {
     .contact-us label {
-        font-size: 1,5rem;
+        font-size: 1.5rem;
     }
 
     form p {
-        font-size: 1,5rem;
+        font-size: 1.5rem;
     }
 
     .gym-section li {
-        font-size: 1,5rem;
+        font-size: 1.5rem;
     }
 }
 
