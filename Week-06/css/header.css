@@ -1,0 +1,11 @@
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+    top: 0;
+    background-color: #373867;
+}
+
+header img {
+    padding: 10px 0;
+}

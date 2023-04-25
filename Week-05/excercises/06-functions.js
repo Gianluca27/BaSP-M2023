@@ -23,7 +23,7 @@ function additionTwo(x, y) {
     else {
         return x + y;
     };
-}
+};
 var resultTwo = additionTwo('hola', 7);
 console.log(resultTwo);
 
@@ -57,7 +57,7 @@ function additionThree(x, y) {
     else {
         return x + y;
     };
-}
+};
 var resultThree = additionThree(7.5, 7);
 console.log(resultThree);
 
@@ -68,5 +68,5 @@ probando que todo siga funcionando igual que en el apartado anterior. */
 console.log('Exercise 6.e');
 function valNumberInt(x, y) {
     return additionThree(x, y);
-}
+};
 console.log(valNumberInt(6.5, 8));
