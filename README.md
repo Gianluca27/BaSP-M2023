@@ -35,5 +35,13 @@ some of the stuff I had already learned.
 
 Github Pages: https://gianluca27.github.io/BaSP-M2023/Week-05/index.html
 
+## Week-06
+This week things escalated fast, we learned how to manipulate the HTML and CSS
+files of the page using DOM JavaScript. The assignment was to create a login and 
+sign up page with forms to complete. We had to make validations for the form so 
+it would accept or reject the info that was typed in every input.
+
+https://gianluca27.github.io/BaSP-M2023/Week-06
+
 ## Authors
 Gianluca Agrano
