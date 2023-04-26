@@ -9,7 +9,7 @@ invalidEmail.classList.add('error');
 var invalidPass = document.createElement('p');
 invalidPass.classList.add('error');
 
-var isAlphanumeric = /^[a-zA-Z0-9]+$/;
+var alphanumeric = /^[a-zA-Z0-9]+$/;
 
 emailInput.onblur = function() {
     var validateEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/
@@ -35,7 +35,7 @@ passwordInput.onblur = function() {
         passField.appendChild(invalidPass)
     }
     else {
-        if ((!password.value.match(isAlphanumeric)) || (password.value.length < 8)) {
+        if ((!password.value.match(alphanumeric)) || (password.value.length < 8)) {
             invalidPass.innerText = 'Invalid password'
             passField.appendChild(invalidPass)
         }
@@ -62,7 +62,7 @@ submitButton.onclick = function(event) {
         validateForm = true
     }
     if (passwordInput > 0) {
-        if ((!password.value.match(isAlphanumeric)) || (password.value.length < 8)) {
+        if ((!password.value.match(alphanumeric)) || (password.value.length < 8)) {
             errorMessage += 'Invalid password'
             validateForm = true
         }

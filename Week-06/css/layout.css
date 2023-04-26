@@ -4,7 +4,7 @@ html {
 
 h1 {
     font-size: 3rem;
-    margin: 20% 0 20%;
+    margin: 5% 0;
     text-align: center;
     color: white;
 }
@@ -20,12 +20,12 @@ main {
     flex-direction: column;
     background-image: url(/assets/images/login-background.png);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     height: 100%;
 }
 
 section {
     display: flex;
     justify-content: center;
-    height: 70%;
+    height: 100%;
 }
