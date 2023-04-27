@@ -1,31 +1,31 @@
-html {
-    height: 100%;
-}
-
 h1 {
-    font-size: 3rem;
     margin: 5% 0;
+    font-size: 3rem;
     text-align: center;
     color: white;
 }
 
 h2 {
+    margin: 5%;
     font-size: 2rem;
-    margin: 40px;
+    text-align: center;
     color: white;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    background-image: url(/assets/images/login-background.png);
+    background-image: url(/assets/images/form-page-background.png);
     background-size: cover;
     background-repeat: repeat;
-    height: 100%;
 }
 
 section {
     display: flex;
     justify-content: center;
-    height: 100%;
+    height: 100%
+}
+
+@media only screen and (min-width: 1024px){
+    main {
+        margin-left: 20%;
+    }
 }

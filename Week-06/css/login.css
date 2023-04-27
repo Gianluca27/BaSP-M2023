@@ -1,44 +1,37 @@
-.error {
-    color: red;
-    
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #8E969C;
-    width: 60%;
-    height: 100%;
-}
-
-.info-field {
-    width: 75%;
-}
-
-#pass-field, #email-field {
-    width: 60%;
-    text-align: center;
-}
-
-form img {
-    max-width: 70%;
-    max-height: 70%;
-}
-
-form p {
+p {
+    width: 100%;
     display: inline;
 }
 
-form a {
-    margin: 15px;
+button {
+    margin: 5% 0;
+    background-color: #CC9D42;
+    color: #ffffff;
 }
 
-form button {
-	width: 50%;
-	padding: 5px;
-	margin-bottom: 20px;
-    border: none;
-    background-color: #CC9D42;
-    color: #fff;
+input[type="text"] {
+    height: 50%;
+    margin: 4% 0;
+}
+
+form {
+    height: 100%;
+    width: 50%;
+    padding: 5% 10%;
+    background-color: #8E969C;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0;
+}
+
+form div:last-child {
+    flex-direction: column;
+    text-align: center;
+}
+
+.remember-me {
+    display: inline;
 }

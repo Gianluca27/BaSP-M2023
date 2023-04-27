@@ -6,6 +6,10 @@ header {
     background-color: #373867;
 }
 
-header img {
-    padding: 10px 0;
+.menu {
+    margin-right: 20px;
+}
+
+.alt-logo img {
+    padding: 20px 0;
 }

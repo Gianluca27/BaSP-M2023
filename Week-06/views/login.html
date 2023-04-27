@@ -1,88 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Login | MegaRocket GYM">
-        <meta name="author" content="Gianluca Agrano">
-        <link rel="stylesheet" type="text/css" href="../css/reset.css">
-        <link rel="stylesheet" type="text/css" href="../css/layout.css">
-        <link rel="stylesheet" type="text/css" href="../css/header.css">
-        <link rel="stylesheet" type="text/css" href="../css/sidebar.css">
-        <link rel="stylesheet" type="text/css" href="../css/login.css">
-        <link rel="stylesheet" type="text/css" href="../css/footer.css">
-        <title>Login | MegaRocket GYM</title>
-    </head>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Sign In | MegaRocket GYM">
+		<meta name="author" content="Gianluca Agrano">
+		<link rel="stylesheet" type="text/css" href="../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/layout.css">
+		<link rel="stylesheet" type="text/css" href="../css/header.css">
+		<link rel="stylesheet" type="text/css" href="../css/sidebar.css">
+		<link rel="stylesheet" type="text/css" href="../css/login.css">
+		<link rel="stylesheet" type="text/css" href="../css/footer.css">
+		<title>Sign In | MegaRocket GYM</title>
+	</head>
     <body>
-        <header>
-			<div>
-				<img src="../../assets/images/menu-icon.png">
-			</div>
-				<img src="../../assets/images/mega-rocket.png">
-		</header>
-		<aside>
-            <div class="logo">
-                <img src="../../assets/images/mega-rocket-2.png" alt="alternative megarocket logo">
-            </div>
-            <div class="main-nav">
-            <ul>
-                <li>Home</li>
-                <li>Sign Up</li>
-                <li>Login</li>
-                <div>
-                    <li class="contact-menu">Contact</li>
-                    <img src="../../assets/images/arrow.png" alt="arrow pointing downwards">
+        <aside>
+            <nav>
+                <div class="logo">
+                    <img src="/assets/images/mega-rocket-2.png" alt="alternative megarocket logo">
                 </div>
-            </ul>
-            </div>
-            <p>Get in contact</p>
-            <div class="get-contact">
-                <div class="email">
-                    <img src="../../assets/images/email.png" alt="envelope icon">
-                    <p>RocketSA@gmail.com</p>
+                <div class="main-nav">
+                <ul>
+                    <li>Home</li>
+                    <li>Sign Up</li>
+                    <li>Login</li>
+                    <div>
+                        <li class="contact-menu">Contact</li>
+                        <img src="/assets/images/arrow.png" alt="arrow pointing downwards">
+                    </div>
+                </ul>
                 </div>
-                <div class="telephone">
-                    <img src="../../assets/images/telephone.png" alt="telephone icon">
-                    <p>(000) 000-000000</p>
+                <p>Get in contact</p>
+                <div class="get-contact">
+                    <div class="email">
+                        <img src="/assets/images/email.png" alt="envelope icon">
+                        <p>RocketSA@gmail.com</p>
+                    </div>
+                    <div class="telephone">
+                        <img src="/assets/images/telephone.png" alt="telephone icon">
+                        <p>(000) 000-000000</p>
+                    </div>
+                    <div class="location">
+                        <img src="/assets/images/location.png" alt="home icon">
+                        <p>Somewhere -Zeballos 1410</p>
+                    </div>
                 </div>
-                <div class="location">
-                    <img src="../../assets/images/location.png" alt="home icon">
-                    <p>Somewhere -Zeballos 1410</p>
+            </nav>
+        </aside>
+		<main>
+            <header>
+                <div class="menu">
+                    <img src="/assets/images/menu-icon.png" alt="menu icon">
                 </div>
-            </div>
-		</aside>
-        <main>
-            <h1>Sign In</h1>
-            <section>
+                <div class="alt-logo">
+                    <img src="/assets/images/mega-rocket.png" alt="megarocket logo">
+                </div>
+            </header>
+			<h1>Sign In</h1>
+			<section>
                 <form>
                     <h2>Login</h2>
                     <div id="email-field">
-                        <img src="../../assets/images/email-login.png">
+                        <label>Email:</label>
                         <input id="email" class="info-field" type="text" name="Email">
                     </div>
                     <div id="pass-field">
-                        <img src="../../assets/images/password.png">
+                        <label>Password:</label>
                         <input id="password" class="info-field" type="text" name="Password">
                     </div>
                     <div>
-                        <input type="checkbox" name="Remember Me">
-                        <p>Remember Me?</p>
+                        <div class="remember-me">
+                            <input type="checkbox" name="Remember Me">
+                            <p>Remember Me?</p>
+                        </div>
+                        <a href="#">Forgot Password?</a>
+                        <button id="sign-in" type="submit">Sign In</button>
+                        <button type="button">Sign Up</button>
                     </div>
-                    <a href="#">Forgot Password?</a>
-                    <button id="sign-in" type="submit">Sign In</button>
-                    <button type="button">Sign Up</button>
                 </form>
-            </section>
+			</section>
             <footer>
-				<div>
+                <div>
                     <a href="https://www.twitter.com"><img src="../../assets/images/twitter.png" alt="twitter logo"></a>
                     <a href="https://www.instagram.com"><img src="../../assets/images/instagram.png" alt="instagram logo"></a>
                     <a href="https://www.facebook.com"><img src="../../assets/images/facebook.png" alt="facebook logo"></a>
                 </div>
                 <p>Copyright © 2023 MegaRocket SA. All rights reserved.</p>
-			</footer>
-        </main>
+            </footer>
+		</main>
         <script defer src="../js/login.js"></script>
     </body>
 </html>
