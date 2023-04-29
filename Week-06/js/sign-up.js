@@ -74,7 +74,6 @@ function isAlphanumeric(str) {
     return true;
 };
 
-
 function isNumeric(str) {
     for (var i = 0; i < str.length; i++) {
       var charCode = str.charCodeAt(i);
@@ -103,7 +102,7 @@ function isValidDate(str) {
   }
 
 nameInput.onblur = function() {
-    if (nameInput.value.length == 0) {
+    if (nameInput.value == '') {
         invalidName.innerText = 'Name is required'
         nameField.appendChild(invalidName)
     }
@@ -141,7 +140,6 @@ lastNameInput.onfocus = function() {
 };
 
 dniInput.onblur = function() {
-    console.log(dniInput.value)
     if (dniInput.value == '') {
         invalidDni.innerText = 'DNI is required'
         dniField.appendChild(invalidDni)
@@ -165,8 +163,17 @@ dniInput.onfocus = function() {
 };
 
 bdayDateInput.onblur = function() {
-    if (!isValidDate(bdayDateInput.value)) {
-        invalidBdayDate.innerText = 'Invalid birthday date'
+    var dateString = bdayDateInput.value
+    var selectedDate = dateString.split('-')
+    // var formattedDate = selectedDate[2] + '/' + selectedDate[1] + '/' + selectedDate[0]
+    if (dateString == '') {
+        invalidBdayDate.innerText = 'Birthday date is required'
+        bdayDateField.appendChild(invalidBdayDate)
+    }
+    if (selectedDate[0] < 1930 || selectedDate[0] > 2010) {
+        invalidBdayDate.innerText = 'Birthday date must be between 1930 and 2010'
+        console.log(selectedDate)
+        bdayDateField.appendChild(invalidBdayDate)
     }
 };
 
@@ -175,7 +182,7 @@ bdayDateInput.onfocus = function() {
 };
 
 telNumberInput.onblur = function() {
-    if (telNumberInput.value.length == 0) {
+    if (telNumberInput.value == '') {
         invalidTelNumber.innerText = 'Telephone number is required'
         telNumberField.appendChild(invalidTelNumber)
     }
@@ -194,7 +201,7 @@ telNumberInput.onfocus = function() {
 };
 
 addressInput.onblur = function() {
-    if (addressInput.value.length == 0) {
+    if (addressInput.value == '') {
         invalidAddress.innerText = 'Address is required'
         addressField.appendChild(invalidAddress)
     }
@@ -204,6 +211,7 @@ addressInput.onblur = function() {
     }
     if (!isAlphanumericWithSpaces(addressInput.value)) {
         invalidAddress.innerText += 'Address can only contain alphanumeric characters'
+        addressField.appendChild(invalidAddress)
     }
 };
 
@@ -212,7 +220,7 @@ addressInput.onfocus = function() {
 };
 
 localityInput.onblur = function() {
-    if (localityInput.value.length == 0) {
+    if (localityInput.value == '') {
         invalidLocality.innerText = 'Locality required'
         localityField.appendChild(invalidLocality)
     }
@@ -221,7 +229,7 @@ localityInput.onblur = function() {
         localityField.appendChild(invalidLocality)
     }
     if (!isAlphanumericWithSpaces(localityInput.value)) {
-        invalidLocality.innerText += 'Locality can only contain alphabetic characters'
+        invalidLocality.innerText += 'Locality can only contain alphanumeric characters'
         localityField.appendChild(invalidLocality)
     }
 };
@@ -231,7 +239,7 @@ localityInput.onfocus = function() {
 }
 
 postalCodeInput.onblur = function() {
-    if (postalCodeInput.value.length == 0) {
+    if (postalCodeInput.value == '') {
         invalidPostalCode.innerText = 'Postal Code is required'
         postalCodeField.appendChild(invalidPostalCode)
     }
@@ -270,7 +278,7 @@ emailInput.onfocus = function() {
 };
 
 passwordInput.onblur = function() {
-    if (passwordInput.value.length == 0) {
+    if (passwordInput.value == '') {
         invalidPass.innerText = 'Password is required \n'
         passField.appendChild(invalidPass)
     }
@@ -289,7 +297,7 @@ passwordInput.onfocus = function() {
 };
 
 repeatPassInput.onblur = function() {
-    if (repeatPassInput.value.length == 0) {
+    if (repeatPassInput.value == '') {
         invalidRepeatPass.innerText = 'Repeat Password is required'
         repeatPassField.appendChild(invalidRepeatPass)
     }
@@ -303,18 +311,131 @@ repeatPassInput.onfocus = function() {
     invalidRepeatPass.innerText = ''
 };
 
-var formFields = [nameInput.value, lastNameInput.value, dniInput.value, telNumberInput.value, addressInput.value,
-localityInput.value, postalCodeInput.value, emailInput.value, passwordInput.value, repeatPassInput.value]
-
-submitButton.onclick = function() {
+submitButton.onclick = function(event) {
     event.preventDefault()
-    for (var i = 0; i < formFields.length; i++) {
-        if (formFields[i] == '') {
-            i = 12
-            alert('The form has errors')
+    var errorMessage = ''
+    var validateForm = false
+    var validateEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/
+    var dateString = bdayDateInput.value
+    var selectedDate = dateString.split('-')
+    var formattedDate = selectedDate[2] + '/' + selectedDate[1] + '/' + selectedDate[0]
+    if ((nameInput.value.length > 0)) {
+        if ((nameInput.value.length < 3) || (!isAlphabetic(nameInput.value))) {
+            errorMessage += 'Invalid Name' + '\n'
+            validateForm = true
         }
-        else {
-            alert('User registered!')
+    }
+    else {
+        errorMessage += 'Name is required' + '\n'
+        validateForm = true
+    }
+    if (lastNameInput.value.length > 0) {
+        if (lastNameInput.value.length < 3 || (!isAlphabetic(lastNameInput.value))) {
+            errorMessage += 'Invalid Last Name' + '\n'
+            validateForm = true
         }
+    }
+    else {
+        errorMessage += 'Last name is required' + '\n'
+        validateForm = true
+    }
+    if (dniInput.value.length > 0) {
+        if ((dniInput.value.length > 9) || (dniInput.value.length < 7) ||
+        (!isNumeric(dniInput.value))) {
+            errorMessage += 'Invalid DNI' + '\n'
+            validateForm = true
+        }
+    }
+    else {
+        errorMessage += 'DNI is required' + '\n'
+        validateForm = true
+    }
+    if (bdayDateInput.value.length > 0) {
+        if (selectedDate[0] < 1930 || selectedDate[0] > 2010) {
+            errorMessage += 'Invalid Birthday date' + '\n'
+            validateForm = true
+        }
+    }
+    else {
+        errorMessage += 'Birthday date is required' + '\n'
+        validateForm = true
+    }
+    if (telNumberInput.value.length > 0) {
+        if ((telNumberInput.value.length != 10) || (!isNumeric(telNumberInput.value))) {
+            errorMessage += 'Invalid Telephone Number' + '\n'
+            validateForm = true
+        }
+    }
+    else {
+        errorMessage += 'Telephone Number is required' + '\n'
+        validateForm = true
+    }
+    if (addressInput.value.length > 0) {
+        if ((addressInput.value.length < 5) || (!isAlphanumericWithSpaces(addressInput.value))) {
+            errorMessage += 'Invalid Address' + '\n'
+            validateForm = true
+        }
+    }
+    else {
+        errorMessage += 'Address is required' + '\n'
+        validateForm = true
+    }
+    if (localityInput.value.length > 0) {
+        if ((localityInput.value.length < 3) || (!isAlphanumericWithSpaces(localityInput.value))) {
+            errorMessage += 'Invalid Locality' + '\n'
+            validateForm = true
+        }
+    }
+    else {
+        errorMessage += 'Locality is required' + '\n'
+        validateForm = true
+    }
+    if (postalCodeInput.value.length > 0) {
+        if ((postalCodeInput.value.length < 4) || (postalCodeInput.value.length > 5) || (!isNumeric(postalCodeInput.value))) {
+            errorMessage += 'Invalid Postal Code' + '\n'
+            validateForm = true
+        }
+    }
+    else {
+        errorMessage += 'Postal Code is required' + '\n'
+        validateForm = true
+    }
+    if (emailInput.value.length > 0) {
+        if (!validateEmail.test(email.value)) {
+            errorMessage += 'Invalid email' + '\n'
+            validateForm = true
+        }
+    }
+    else {
+        errorMessage += 'Email is required' + '\n'
+        validateForm = true
+    }
+    if (passwordInput.value.length > 0) {
+        if ((!isAlphanumeric(password.value)) || (password.value.length < 8)) {
+            errorMessage += 'Invalid password'  + '\n'
+            validateForm = true
+        }
+    }
+    else {
+        errorMessage += 'Password is required'  + '\n'
+        validateForm = true
+    }
+    if (repeatPassInput.value.length > 0) {
+        if (repeatPassInput.value != passwordInput.value) {
+            errorMessage += 'Passwords do not match'
+            validateForm = true
+        }
+    }
+    else {
+        errorMessage += 'Repeat Password is required'
+        validateForm = true
+    }
+    if (validateForm) {
+        alert(errorMessage)
+    }
+    else {
+        alert('Logged in succesfully! \n' + nameInput.value + '\n' + lastNameInput.value + '\n' + dniInput.value +
+        '\n' + formattedDate + '\n' + telNumberInput.value + '\n' + addressInput.value + '\n' + localityInput.value + '\n' + postalCodeInput.value
+        + '\n' + email.value + '\n' + password.value + '\n' + repeatPassInput.value)
     }
 };
