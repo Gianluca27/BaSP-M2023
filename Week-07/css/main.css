@@ -1,0 +1,240 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.us h1 {
+    text-align: center;
+}
+
+.us img {
+    width: 100%;
+    border-radius: 22px;
+}
+
+.us p {
+    margin-top: 5px;
+    color: #3D3D3D;
+}
+
+.us span {
+    color: #2F3058;
+}
+
+.meet-us article {
+    display: flex;
+    max-height: 20%;
+    margin-bottom: 50px;
+}
+
+.meet-us div {
+    align-self: center;
+}
+
+.meet-us img {
+    margin-right: 5px;
+    max-height: 150px;
+}
+
+.meet-us h3 {
+    font-weight: 600;
+    color: #373867;
+}
+
+.meet-us p {
+    color: #979797;
+}
+
+form label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #373867;
+}
+
+form p {
+    display: inline;
+    font-size: 1rem;
+}
+
+.personal-info input {
+    width: 95%;
+    height: 30px;
+    margin: 7px 0 17px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+.motive {
+    margin: 7px 0;
+}
+
+.message {
+    margin: 15px 0 10px;
+}
+
+.message input {
+    width: 95%;
+    height: 160px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+form button {
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.submit, .reset {
+    width: 40%;
+    margin: 5px;
+}
+
+.submit button {
+    background-color: #373867;
+    font-weight: 600;
+    color: #FFFFFF;
+    border: 1px solid #373867;
+}
+
+.reset button {
+    background-color: #FFFFFF;
+    font-weight: 600;
+    color: #373867;
+    border: 1px solid #373867;
+}
+
+.about-us img {
+    width: 30%;
+    height: 30%;
+    border-radius: 8px;
+}
+
+.about-us h3 {
+    padding: 10px 0;
+    font-weight: 700;
+    color: #373867;
+}
+
+.about-us p {
+    padding-bottom: 15px;
+    color: #6D6D6D;
+}
+
+.thoughts {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.paragraph {
+    margin-left: 5px;
+    width: 60%;
+    height: 40%;
+}
+
+.family {
+    display: flex;
+}
+.gym-section {
+    border: none;
+}
+
+.gym-section article {
+    border: 2px solid #49A37B;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.gym-section h3 {
+    margin: 10px 15px;
+    font-weight: 700;
+    color: #373867;
+}
+
+.gym-section ol {
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 600px) {
+    .contact-us label {
+        font-size: 1.5rem;
+    }
+
+    form p {
+        font-size: 1.5rem;
+    }
+
+    .gym-section li {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    main {
+        width: 80%;
+        margin-left: 20%;
+    }
+
+    .us h1 {
+        text-align: left;
+    }
+
+    .us img {
+        width: 40%;
+        height: 40%;
+    }
+
+    .us article {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .us div {
+        width: 60%;
+    }
+
+    .meet-us article {
+        width: 50%;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .personal-info {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .personal-info div {
+        width: 45%;
+    }
+
+    .submit, .reset {
+        width: 20%;
+    }
+
+    .buttons {
+        margin-right: 45px;
+        justify-content: right;
+    }
+
+    .paragraph-two {
+        width: 80%;
+    }
+
+    .gym-section article {
+        width: 45%;
+        margin-left: 20px;
+    }
+}

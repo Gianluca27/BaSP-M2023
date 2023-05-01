@@ -1,0 +1,37 @@
+p {
+    width: 100%;
+    display: inline;
+}
+
+button {
+    margin: 5% 0;
+    background-color: #CC9D42;
+    color: #ffffff;
+}
+
+input[type="text"] {
+    height: 50%;
+    margin: 4% 0;
+}
+
+form {
+    height: 100%;
+    width: 50%;
+    padding: 5% 10%;
+    background-color: #8E969C;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0;
+}
+
+form div:last-child {
+    flex-direction: column;
+    text-align: center;
+}
+
+.remember-me {
+    display: inline;
+}

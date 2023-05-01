@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin: 5% 0;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    margin: 5%;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+}
+
+main {
+    background-image: url(/assets/images/form-page-background.png);
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    height: 100%
+}
+
+.error {
+    color: red;
+}
+
+@media only screen and (min-width: 1024px){
+    main {
+        margin-left: 20%;
+    }
+
+    .hidden-sidebar {
+        margin: 0;
+    }
+}

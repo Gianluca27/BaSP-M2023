@@ -1,0 +1,49 @@
+p {
+    width: 100%;
+    display: inline;
+}
+
+button {
+    margin: 5% 0;
+    background-color: #CC9D42;
+    color: #ffffff;
+}
+
+form {
+    width: 50%;
+    padding: 5% 10%;
+    background-color: #8E969C;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0;
+}
+
+form div:last-child {
+    text-align: center;
+}
+
+
+
+.buttons {
+
+}
+
+
+@media only screen and (min-width: 1024px){
+    form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    form div {
+        width: 46%;
+        margin: 5% 10px;
+    }
+
+    .form-tittle {
+        width: 100%;
+    }
+}
