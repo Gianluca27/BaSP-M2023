@@ -1,3 +1,7 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
     margin: 5% 0;
     font-size: 3rem;
@@ -24,8 +28,16 @@ section {
     height: 100%
 }
 
+.error {
+    color: red;
+}
+
 @media only screen and (min-width: 1024px){
     main {
         margin-left: 20%;
+    }
+
+    .hidden-sidebar {
+        margin: 0;
     }
 }

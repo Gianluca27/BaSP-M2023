@@ -3,9 +3,14 @@ var passwordInput = document.getElementById('password');
 var emailField = document.getElementById('email-field');
 var passField = document.getElementById('pass-field');
 var submitButton = document.getElementById('sign-in');
-var homeButton = document.getElementById('home')
-var redirSignUp = document.getElementById('sign-up')
-var redirLogin = document.getElementById('login')
+var displaySidebar = document.getElementById('sidebar-button');
+var sidebar = document.getElementById('sidebar')
+var header = document.getElementById('header')
+var homeButton = document.getElementById('home-button')
+var loginRedir = document.getElementById('login-redir')
+var signUpRedir = document.getElementById('sign-up-redir')
+var signUpButton = document.getElementById('sign-up-button')
+var main = document.getElementById('main')
 
 var invalidEmail = document.createElement('p');
 invalidEmail.classList.add('error');
@@ -25,6 +30,35 @@ function isAlphanumeric(str) {
     }
     return true;
 };
+
+displaySidebar.onclick = function() {
+    if (sidebar.classList.length == 0) {
+        sidebar.classList.add('displayed-sidebar')
+        header.classList.add('header')
+        main.classList.add('hidden-sidebar')
+    }
+    else {
+        sidebar.classList.remove('displayed-sidebar')
+        header.classList.remove('header')
+        main.classList.remove('hidden-sidebar')
+    }
+};
+
+homeButton.onclick = function() {
+    location.href = "../views/index.html"
+}
+
+signUpRedir.onclick = function() {
+    location.href = "../views/sign-up.html"
+}
+
+loginRedir.onclick = function() {
+    location.href = "../views/login.html"
+}
+
+signUpButton.onclick = function() {
+    location.href = "../views/sign-up.html"
+}
 
 emailInput.onblur = function() {
     var validateEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/

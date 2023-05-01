@@ -15,16 +15,16 @@
 		<title>Sign Up | MegaRocket GYM</title>
 	</head>
     <body>
-        <aside>
+        <aside id="sidebar">
             <nav>
                 <div class="logo">
                     <img src="/assets/images/mega-rocket-2.png" alt="alternative megarocket logo">
                 </div>
                 <div class="main-nav">
                 <ul>
-                    <li>Home</li>
-                    <li>Sign Up</li>
-                    <li>Login</li>
+                    <li id="home-button">Home</li>
+                    <li id="sign-up-redir">Sign Up</li>
+                    <li id="login-redir">Login</li>
                     <div>
                         <li class="contact-menu">Contact</li>
                         <img src="/assets/images/arrow.png" alt="arrow pointing downwards">
@@ -48,19 +48,21 @@
                 </div>
             </nav>
         </aside>
-		<main>
-            <header>
+		<main id="main">
+            <header id="header">
                 <div class="menu">
-                    <img src="/assets/images/menu-icon.png" alt="menu icon">
+                    <img id="sidebar-button" src="/assets/images/menu-icon.png" alt="menu icon">
                 </div>
                 <div class="alt-logo">
                     <img src="/assets/images/mega-rocket.png" alt="megarocket logo">
                 </div>
             </header>
 			<h1>Sign Up</h1>
-			<section>
+            <section>
 				<form>
-					<h2>Register</h2>
+                    <div class="form-tittle">
+                        <h2>Register</h2>
+                    </div>
                     <div id="name-field">
                         <label>Name:</label>
                         <input id="name" class="info-field" type="text" name="Name">
@@ -102,10 +104,10 @@
 						<input id="password" class="info-field" type="text" name="Password">
 					</div>
                     <div id="repeat-pass-field">
-                        <label>Repeat Password</label>
+                        <label>Repeat Password:</label>
                         <input id="repeat-pass" class="info-field" type="text" name="Repeat Password">
                     </div>
-                    <div>
+                    <div class="buttons">
                         <a href="login.html">Already have an account?</a>
                         <button id="sign-up" type="submit">Sign Up</button>
                     </div>

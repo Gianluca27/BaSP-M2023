@@ -1,7 +1,7 @@
-var nameInput = document.getElementById('name')
-var nameField = document.getElementById('name-field')
-var lastNameInput = document.getElementById('last-name')
-var lastNameField = document.getElementById('last-name-field')
+var nameInput = document.getElementById('name');
+var nameField = document.getElementById('name-field');
+var lastNameInput = document.getElementById('last-name');
+var lastNameField = document.getElementById('last-name-field');
 var dniInput = document.getElementById('dni');
 var dniField = document.getElementById('dni-field');
 var bdayDateInput = document.getElementById('bday-date');
@@ -18,9 +18,16 @@ var emailInput = document.getElementById('email');
 var emailField = document.getElementById('email-field');
 var passwordInput = document.getElementById('password');
 var passField = document.getElementById('pass-field');
-var repeatPassInput = document.getElementById('repeat-pass')
-var repeatPassField = document.getElementById('repeat-pass-field')
+var repeatPassInput = document.getElementById('repeat-pass');
+var repeatPassField = document.getElementById('repeat-pass-field');
 var submitButton = document.getElementById('sign-up');
+var displaySidebar = document.getElementById('sidebar-button');
+var sidebar = document.getElementById('sidebar')
+var header = document.getElementById('header')
+var homeButton = document.getElementById('home-button')
+var loginRedir = document.getElementById('login-redir')
+var signUpRedir = document.getElementById('sign-up-redir')
+var main = document.getElementById('main')
 
 var invalidName = document.createElement('p');
 invalidName.classList.add('error');
@@ -43,9 +50,7 @@ invalidEmail.classList.add('error');
 var invalidPass = document.createElement('p');
 invalidPass.classList.add('error');
 var invalidRepeatPass = document.createElement('p');
-invalidRepeatPass.classList.add('error')
-
-var validateForm = false
+invalidRepeatPass.classList.add('error');
 
 function isAlphanumericWithSpaces(str) {
     for (var i = 0; i < str.length; i++) {
@@ -58,7 +63,7 @@ function isAlphanumericWithSpaces(str) {
       }
     }
     return true;
-  }
+  };
 
 function isAlphanumeric(str) {
     for (var i = 0; i < str.length; i++) {
@@ -96,10 +101,30 @@ function isAlphabetic(str) {
     return true;
 };
 
-function isValidDate(str) {
-    var date = new Date(str);
-    return !isNaN(date.getTime());
-  }
+displaySidebar.onclick = function() {
+    if (sidebar.classList.length == 0) {
+        sidebar.classList.add('displayed-sidebar')
+        header.classList.add('header')
+        main.classList.add('hidden-sidebar')
+    }
+    else {
+        sidebar.classList.remove('displayed-sidebar')
+        header.classList.remove('header')
+        main.classList.remove('hidden-sidebar')
+    }
+};
+
+homeButton.onclick = function() {
+    location.href = "../views/index.html"
+}
+
+signUpRedir.onclick = function() {
+    location.href = "../views/sign-up.html"
+}
+
+loginRedir.onclick = function() {
+    location.href = "../views/login.html"
+}
 
 nameInput.onblur = function() {
     if (nameInput.value == '') {
@@ -439,3 +464,4 @@ submitButton.onclick = function(event) {
         + '\n' + email.value + '\n' + password.value + '\n' + repeatPassInput.value)
     }
 };
+

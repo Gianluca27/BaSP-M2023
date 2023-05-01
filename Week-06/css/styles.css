@@ -3,6 +3,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+aside a {
+    text-decoration: none;
+}
+
 section {
     align-self: center;
     height: 80%;
