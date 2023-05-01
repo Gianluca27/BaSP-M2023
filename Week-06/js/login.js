@@ -110,7 +110,7 @@ submitButton.onclick = function(event) {
         errorMessage += 'Email is required' + '\n'
         validateForm = true
     }
-    if (passwordInput > 0) {
+    if (passwordInput.value.length > 0) {
         if ((!isAlphanumeric(passwordInput.value)) || (password.value.length < 8)) {
             errorMessage += 'Invalid password'
             validateForm = true
@@ -125,5 +125,16 @@ submitButton.onclick = function(event) {
     }
     else {
         alert('Logged in succesfully! \n' + email.value + '\n' + password.value)
+        fetch("https://api-rest-server.vercel.app/login")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data)
+        })
+        .catch(function (error) {
+            console.log("error", error)
+        })
     }
 };
+

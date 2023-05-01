@@ -66,11 +66,9 @@ emailInput.onblur = function() {
         invalidEmail.innerText = 'Email is required'
         emailField.appendChild(invalidEmail)
     }
-    else {
-        if (!validateEmail.test(emailInput.value)) {
-            invalidEmail.innerText = 'Invalid email'
-            emailField.appendChild(invalidEmail)
-        }
+    if (!validateEmail.test(emailInput.value)) {
+        invalidEmail.innerText = 'Invalid email'
+        emailField.appendChild(invalidEmail)
     }
 };
 
@@ -83,11 +81,9 @@ passwordInput.onblur = function() {
         invalidPass.innerText = 'Password is required'
         passField.appendChild(invalidPass)
     }
-    else {
-        if ((!isAlphanumeric(passwordInput.value)) || (password.value.length < 8)) {
-            invalidPass.innerText = 'Invalid password'
-            passField.appendChild(invalidPass)
-        }
+    if ((!isAlphanumeric(passwordInput.value)) || (password.value.length < 8)) {
+        invalidPass.innerText = 'Invalid password'
+        passField.appendChild(invalidPass)
     }
 };
 
@@ -125,5 +121,15 @@ submitButton.onclick = function(event) {
     }
     else {
         alert('Logged in succesfully! \n' + email.value + '\n' + password.value)
+        fetch("https://api-rest-server.vercel.app/login")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data)
+        })
+        .catch(function (error) {
+            console.log("error", error)
+        })
     }
 };

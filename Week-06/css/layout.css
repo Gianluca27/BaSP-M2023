@@ -17,7 +17,7 @@ h2 {
 }
 
 main {
-    background-image: url(/assets/images/form-page-background.png);
+    background-image: url(./assets/images/form-page-background.png);
     background-size: cover;
     background-repeat: repeat;
 }
