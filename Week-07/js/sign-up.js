@@ -28,6 +28,7 @@ var homeButton = document.getElementById('home-button')
 var loginRedir = document.getElementById('login-redir')
 var signUpRedir = document.getElementById('sign-up-redir')
 var main = document.getElementById('main')
+var myForm = document.querySelector('form')
 
 var invalidName = document.createElement('p');
 invalidName.classList.add('error');
@@ -190,7 +191,6 @@ dniInput.onfocus = function() {
 bdayDateInput.onblur = function() {
     var dateString = bdayDateInput.value
     var selectedDate = dateString.split('-')
-    // var formattedDate = selectedDate[2] + '/' + selectedDate[1] + '/' + selectedDate[0]
     if (dateString == '') {
         invalidBdayDate.innerText = 'Birthday date is required'
         bdayDateField.appendChild(invalidBdayDate)
@@ -459,9 +459,27 @@ submitButton.onclick = function(event) {
         alert(errorMessage)
     }
     else {
-        alert('Logged in succesfully! \n' + nameInput.value + '\n' + lastNameInput.value + '\n' + dniInput.value +
-        '\n' + formattedDate + '\n' + telNumberInput.value + '\n' + addressInput.value + '\n' + localityInput.value + '\n' + postalCodeInput.value
-        + '\n' + email.value + '\n' + password.value + '\n' + repeatPassInput.value)
+        if (errorMessage.length == 0) {
+            const url = "https://api-rest-server.vercel.app/signup"
+            var formData = new FormData(myForm)
+            const queryParams = new URLSearchParams(formData).toString()
+            fetch(`${url}?${queryParams}`)
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                if (data.success == false) {
+                    throw new Error(data.msg)}
+                    alert(data.msg)
+                    console.log(data)
+            })
+            .catch(error => alert(error))
+        }
     }
+    // else {
+    //     alert('Logged in succesfully! \n' + nameInput.value + '\n' + lastNameInput.value + '\n' + dniInput.value +
+    //     '\n' + formattedDate + '\n' + telNumberInput.value + '\n' + addressInput.value + '\n' + localityInput.value + '\n' + postalCodeInput.value
+    //     + '\n' + email.value + '\n' + password.value + '\n' + repeatPassInput.value)
+    // }
 };
 

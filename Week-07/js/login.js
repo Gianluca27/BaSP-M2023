@@ -11,6 +11,7 @@ var loginRedir = document.getElementById('login-redir')
 var signUpRedir = document.getElementById('sign-up-redir')
 var signUpButton = document.getElementById('sign-up-button')
 var main = document.getElementById('main')
+var myForm = document.querySelector('form')
 
 var invalidEmail = document.createElement('p');
 invalidEmail.classList.add('error');
@@ -30,6 +31,31 @@ function isAlphanumeric(str) {
     }
     return true;
 };
+
+function employeeIdCheck() {
+    if (errorMessage.length == 0) {
+        const url = "https://api-rest-server.vercel.app/login"
+        var formData = new FormData(myForm)
+        const queryParams = new URLSearchParams(formData).toString()
+        fetch(`${url}?${queryParams}`)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            if (data.success == false) {
+                throw new Error(data.msg)}
+                alert(data.msg)
+                console.log(data)
+        })
+        .catch(error => alert(error))
+    } else {
+        var errorAlert = ""
+        for (var i = 0; i < errorMessage.length; i++) {
+            errorAlert += errorMessage[i] + "\n"
+        }
+        alert(errorAlert)
+    }
+}
 
 displaySidebar.onclick = function() {
     if (sidebar.classList.length == 0) {
@@ -62,12 +88,12 @@ signUpButton.onclick = function() {
 
 emailInput.onblur = function() {
     var validateEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/
-    if (emailInput.value.length == 0) {
-        invalidEmail.innerText = 'Email is required'
-        emailField.appendChild(invalidEmail)
-    }
     if (!validateEmail.test(emailInput.value)) {
         invalidEmail.innerText = 'Invalid email'
+        emailField.appendChild(invalidEmail)
+    }
+    if (emailInput.value.length == 0) {
+        invalidEmail.innerText = 'Email is required'
         emailField.appendChild(invalidEmail)
     }
 };
@@ -81,9 +107,11 @@ passwordInput.onblur = function() {
         invalidPass.innerText = 'Password is required'
         passField.appendChild(invalidPass)
     }
-    if ((!isAlphanumeric(passwordInput.value)) || (password.value.length < 8)) {
-        invalidPass.innerText = 'Invalid password'
-        passField.appendChild(invalidPass)
+    else {
+        if ((!isAlphanumeric(passwordInput.value)) || (password.value.length < 8)) {
+            invalidPass.innerText = 'Invalid password'
+            passField.appendChild(invalidPass)
+        }
     }
 };
 
@@ -93,8 +121,8 @@ passwordInput.onfocus = function() {
 
 submitButton.onclick = function(event) {
     event.preventDefault()
-    var errorMessage = ''
     var validateForm = false
+    var errorMessage = ''
     var validateEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/
     if (emailInput.value.length > 0) {
         if (!validateEmail.test(email.value)) {
@@ -106,7 +134,7 @@ submitButton.onclick = function(event) {
         errorMessage += 'Email is required' + '\n'
         validateForm = true
     }
-    if (passwordInput > 0) {
+    if (passwordInput.value.length > 0) {
         if ((!isAlphanumeric(passwordInput.value)) || (password.value.length < 8)) {
             errorMessage += 'Invalid password'
             validateForm = true
@@ -120,16 +148,21 @@ submitButton.onclick = function(event) {
         alert(errorMessage)
     }
     else {
-        alert('Logged in succesfully! \n' + email.value + '\n' + password.value)
-        fetch("https://api-rest-server.vercel.app/login")
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data)
-        })
-        .catch(function (error) {
-            console.log("error", error)
-        })
+        if (errorMessage.length == 0) {
+            const url = "https://api-rest-server.vercel.app/login"
+            var formData = new FormData(myForm)
+            const queryParams = new URLSearchParams(formData).toString()
+            fetch(`${url}?${queryParams}`)
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                if (data.success == false) {
+                    throw new Error(data.msg)}
+                    alert(data.msg)
+                    console.log(data)
+            })
+            .catch(error => alert(error))
+        }
     }
 };
