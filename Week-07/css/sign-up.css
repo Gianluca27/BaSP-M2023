@@ -25,13 +25,6 @@ form div:last-child {
     text-align: center;
 }
 
-
-
-.buttons {
-
-}
-
-
 @media only screen and (min-width: 1024px){
     form {
         display: flex;
@@ -39,7 +32,7 @@ form div:last-child {
     }
 
     form div {
-        width: 46%;
+        width: 45%;
         margin: 5% 10px;
     }
 

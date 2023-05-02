@@ -48,12 +48,6 @@ function employeeIdCheck() {
                 console.log(data)
         })
         .catch(error => alert(error))
-    } else {
-        var errorAlert = ""
-        for (var i = 0; i < errorMessage.length; i++) {
-            errorAlert += errorMessage[i] + "\n"
-        }
-        alert(errorAlert)
     }
 }
 
@@ -148,21 +142,20 @@ submitButton.onclick = function(event) {
         alert(errorMessage)
     }
     else {
-        if (errorMessage.length == 0) {
-            const url = "https://api-rest-server.vercel.app/login"
-            var formData = new FormData(myForm)
-            const queryParams = new URLSearchParams(formData).toString()
-            fetch(`${url}?${queryParams}`)
-            .then(response => {
-                return response.json()
-            })
-            .then(data => {
-                if (data.success == false) {
-                    throw new Error(data.msg)}
-                    alert(data.msg)
-                    console.log(data)
-            })
-            .catch(error => alert(error))
-        }
+        alert('User logged in succesfully! \n' + emailInput.value + '\n' + passwordInput.value)
+        const url = "https://api-rest-server.vercel.app/login"
+        var formData = new FormData(myForm)
+        const queryParams = new URLSearchParams(formData).toString()
+        fetch(`${url}?${queryParams}`)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            if (data.success == false) {
+                throw new Error(data.msg)}
+                alert(data.msg)
+                console.log(data)
+        })
+        .catch(error => alert(error))
     }
-};
+}

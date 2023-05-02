@@ -343,7 +343,7 @@ submitButton.onclick = function(event) {
     var validateEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/
     var dateString = bdayDateInput.value
     var selectedDate = dateString.split('-')
-    var formattedDate = selectedDate[2] + '/' + selectedDate[1] + '/' + selectedDate[0]
+    var formattedDate = selectedDate[1] + '/' + selectedDate[2] + '/' + selectedDate[0]
     if ((nameInput.value.length > 0)) {
         if ((nameInput.value.length < 3) || (!isAlphabetic(nameInput.value))) {
             errorMessage += 'Invalid Name' + '\n'
@@ -459,27 +459,64 @@ submitButton.onclick = function(event) {
         alert(errorMessage)
     }
     else {
-        if (errorMessage.length == 0) {
-            const url = "https://api-rest-server.vercel.app/signup"
-            var formData = new FormData(myForm)
-            const queryParams = new URLSearchParams(formData).toString()
-            fetch(`${url}?${queryParams}`)
-            .then(response => {
-                return response.json()
-            })
-            .then(data => {
-                if (data.success == false) {
-                    throw new Error(data.msg)}
-                    alert(data.msg)
-                    console.log(data)
-            })
-            .catch(error => alert(error))
-        }
+        alert('User created succesfully! \n' +
+        nameInput.value + '\n' +
+        lastNameInput.value + '\n' +
+        emailInput.value + '\n' +
+        dniInput.value + '\n' +
+        bdayDateInput.value + '\n' +
+        telNumberInput.value + '\n' +
+        addressInput.value + '\n' +
+        localityInput.value + '\n' +
+        postalCodeInput.value + '\n' +
+        emailInput.value + '\n' +
+        passwordInput.value + '\n' +
+        repeatPassInput.value)
+        var url = "https://api-rest-server.vercel.app/signup" + 
+        "?name=" + nameInput.value +
+        "&lastName=" + lastNameInput.value +
+        "&dni=" + dniInput.value +
+        "&dob=" + formattedDate +
+        "&phone=" + telNumberInput.value + 
+        "&address=" + addressInput.value + 
+        "&city=" + localityInput.value +
+        "&zip=" + postalCodeInput.value + 
+        "&email=" + emailInput.value + 
+        "&password=" + passwordInput.value;
+        var formData = new FormData(myForm)
+        fetch(`${url}`)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            if (data.success) {
+                localStorage.setItem("name", nameInput.value)
+                localStorage.setItem("lastName", lastNameInput.value)
+                localStorage.setItem("dni", dniInput.value)
+                localStorage.setItem("dob", bdayDateInput.value)
+                localStorage.setItem("phone", telNumberInput.value)
+                localStorage.setItem("address", addressInput.value)
+                localStorage.setItem("city", localityInput.value)
+                localStorage.setItem("zip", postalCodeInput.value)
+                localStorage.setItem("email", emailInput.value)
+                localStorage.setItem("password", passwordInput.value)
+            }
+            alert(data.msg);
+            console.log(data);
+        })
+        .catch(error => alert(error))
     }
-    // else {
-    //     alert('Logged in succesfully! \n' + nameInput.value + '\n' + lastNameInput.value + '\n' + dniInput.value +
-    //     '\n' + formattedDate + '\n' + telNumberInput.value + '\n' + addressInput.value + '\n' + localityInput.value + '\n' + postalCodeInput.value
-    //     + '\n' + email.value + '\n' + password.value + '\n' + repeatPassInput.value)
-    // }
 };
 
+window.onload = function () {
+    nameInput.value = localStorage.getItem("name")
+    lastNameInput.value = localStorage.getItem("lastName")
+    dniInput.value = localStorage.getItem("dni")
+    bdayDateInput.value = localStorage.getItem("dob")
+    telNumberInput.value = localStorage.getItem("phone")
+    addressInput.value = localStorage.getItem("address")
+    localityInput.value = localStorage.getItem("city")
+    postalCodeInput.value = localStorage.getItem("zip")
+    emailInput.value = localStorage.getItem("email")
+    passwordInput.value = localStorage.getItem("password")
+}
