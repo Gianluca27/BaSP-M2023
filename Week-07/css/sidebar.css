@@ -36,6 +36,11 @@ nav .logo {
     border-bottom: 2px solid #C4C4C4;
 }
 
+.main-nav li:hover {
+    color: #46A37C;
+    cursor: pointer;
+}
+
 .arrow-img {
     width: 10%;
 }
@@ -68,3 +73,4 @@ nav .contact-menu {
     .displayed-sidebar {
         display: none;
     }
+}

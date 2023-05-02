@@ -41,7 +41,15 @@ files of the page using DOM JavaScript. The assignment was to create a login and
 sign up page with forms to complete. We had to make validations for the form so 
 it would accept or reject the info that was typed in every input.
 
-https://gianluca27.github.io/BaSP-M2023/Week-06
+https://gianluca27.github.io/BaSP-M2023/Week-06/views/login.html
+
+## Week-07
+In Week-07 we started using promises to make requests to an API and manipulate
+it's response. The idea was to get the API to validate if the login information
+corresponded to an employee. We also used localStorage to save the information 
+that was typed in the inputs and then use it auto-complete the form on page load.
+
+https://gianluca27.github.io/BaSP-M2023/Week-07/views/login.html
 
 ## Authors
 Gianluca Agrano
