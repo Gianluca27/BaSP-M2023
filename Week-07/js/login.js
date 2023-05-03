@@ -4,14 +4,14 @@ var emailField = document.getElementById('email-field');
 var passField = document.getElementById('pass-field');
 var submitButton = document.getElementById('sign-in');
 var displaySidebar = document.getElementById('sidebar-button');
-var sidebar = document.getElementById('sidebar')
-var header = document.getElementById('header')
-var homeButton = document.getElementById('home-button')
-var loginRedir = document.getElementById('login-redir')
-var signUpRedir = document.getElementById('sign-up-redir')
-var signUpButton = document.getElementById('sign-up-button')
-var main = document.getElementById('main')
-var myForm = document.querySelector('form')
+var sidebar = document.getElementById('sidebar');
+var header = document.getElementById('header');
+var homeButton = document.getElementById('home-button');
+var loginRedir = document.getElementById('login-redir');
+var signUpRedir = document.getElementById('sign-up-redir');
+var signUpButton = document.getElementById('sign-up-button');
+var main = document.getElementById('main');
+var myForm = document.querySelector('form');
 
 var invalidEmail = document.createElement('p');
 invalidEmail.classList.add('error');
@@ -49,7 +49,7 @@ function employeeIdCheck() {
         })
         .catch(error => alert(error))
     }
-}
+};
 
 displaySidebar.onclick = function() {
     if (sidebar.classList.length == 0) {
@@ -65,20 +65,20 @@ displaySidebar.onclick = function() {
 };
 
 homeButton.onclick = function() {
-    location.href = "../views/index.html"
-}
+    location.href = "index.html"
+};
 
 signUpRedir.onclick = function() {
-    location.href = "../views/sign-up.html"
-}
+    location.href = "sign-up.html"
+};
 
 loginRedir.onclick = function() {
-    location.href = "../views/login.html"
-}
+    location.href = "login.html"
+};
 
 signUpButton.onclick = function() {
-    location.href = "../views/sign-up.html"
-}
+    location.href = "sign-up.html"
+};
 
 emailInput.onblur = function() {
     var validateEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/
@@ -152,10 +152,20 @@ submitButton.onclick = function(event) {
         })
         .then(data => {
             if (data.success == false) {
-                throw new Error(data.msg)}
+                throw new Error(data.msg)
+            }
+            else {
+                localStorage.setItem("email", emailInput.value)
+                localStorage.setItem("password", passwordInput.value)
+            }
                 alert(data.msg)
                 console.log(data)
         })
         .catch(error => alert(error))
     }
-}
+};
+
+window.onload = function () {
+    emailInput.value = localStorage.getItem("email")
+    passwordInput.value = localStorage.getItem("password")
+};

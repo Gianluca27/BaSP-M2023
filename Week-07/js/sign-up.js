@@ -22,13 +22,13 @@ var repeatPassInput = document.getElementById('repeat-pass');
 var repeatPassField = document.getElementById('repeat-pass-field');
 var submitButton = document.getElementById('sign-up');
 var displaySidebar = document.getElementById('sidebar-button');
-var sidebar = document.getElementById('sidebar')
-var header = document.getElementById('header')
-var homeButton = document.getElementById('home-button')
-var loginRedir = document.getElementById('login-redir')
-var signUpRedir = document.getElementById('sign-up-redir')
-var main = document.getElementById('main')
-var myForm = document.querySelector('form')
+var sidebar = document.getElementById('sidebar');
+var header = document.getElementById('header');
+var homeButton = document.getElementById('home-button');
+var loginRedir = document.getElementById('login-redir');
+var signUpRedir = document.getElementById('sign-up-redir');
+var main = document.getElementById('main');
+var myForm = document.querySelector('form');
 
 var invalidName = document.createElement('p');
 invalidName.classList.add('error');
@@ -55,29 +55,29 @@ invalidRepeatPass.classList.add('error');
 
 function isAlphanumericWithSpaces(str) {
     for (var i = 0; i < str.length; i++) {
-        var charCode = str.charCodeAt(i);
+        var charCode = str.charCodeAt(i)
         if ((charCode < 48 || charCode > 57) &&
             (charCode < 65 || charCode > 90) &&
             (charCode < 97 || charCode > 122) &&
             charCode !== 32) {
-        return false;
+        return false
       }
     }
-    return true;
+    return true
   };
 
 function isAlphanumeric(str) {
     for (var i = 0; i < str.length; i++) {
-      var charCode = str.charCodeAt(i);
+      var charCode = str.charCodeAt(i)
       if (
         !(charCode > 47 && charCode < 58) &&
         !(charCode > 64 && charCode < 91) &&
         !(charCode > 96 && charCode < 123)
       ) {
-        return false;
+        return false
       }
     }
-    return true;
+    return true
 };
 
 function isNumeric(str) {
@@ -89,17 +89,17 @@ function isNumeric(str) {
         return false;
       }
     }
-    return true;
+    return true
 };
 
 function isAlphabetic(str) {
     for (var i = 0; i < str.length; i++) {
-      var charCode = str.charCodeAt(i);
+      var charCode = str.charCodeAt(i)
       if ((charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122) && charCode !== 32) {
         return false;
       }
     }
-    return true;
+    return true
 };
 
 displaySidebar.onclick = function() {
@@ -116,16 +116,16 @@ displaySidebar.onclick = function() {
 };
 
 homeButton.onclick = function() {
-    location.href = "../views/index.html"
-}
+    location.href = "index.html"
+};
 
 signUpRedir.onclick = function() {
-    location.href = "../views/sign-up.html"
-}
+    location.href = "sign-up.html"
+};
 
 loginRedir.onclick = function() {
-    location.href = "../views/login.html"
-}
+    location.href = "login.html"
+};
 
 nameInput.onblur = function() {
     if (nameInput.value == '') {
@@ -261,7 +261,7 @@ localityInput.onblur = function() {
 
 localityInput.onfocus = function() {
     invalidLocality.innerText = ''
-}
+};
 
 postalCodeInput.onblur = function() {
     if (postalCodeInput.value == '') {
@@ -284,7 +284,7 @@ postalCodeInput.onblur = function() {
 
 postalCodeInput.onfocus = function() {
     invalidPostalCode.innerText = ''
-}
+};
 
 emailInput.onblur = function() {
     var validateEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/
@@ -500,9 +500,10 @@ submitButton.onclick = function(event) {
                 localStorage.setItem("zip", postalCodeInput.value)
                 localStorage.setItem("email", emailInput.value)
                 localStorage.setItem("password", passwordInput.value)
+                localStorage.setItem("repeatPassword", repeatPassInput.value)
             }
-            alert(data.msg);
-            console.log(data);
+            alert(data.msg)
+            console.log(data)
         })
         .catch(error => alert(error))
     }
@@ -519,4 +520,5 @@ window.onload = function () {
     postalCodeInput.value = localStorage.getItem("zip")
     emailInput.value = localStorage.getItem("email")
     passwordInput.value = localStorage.getItem("password")
-}
+    repeatPassInput.value = localStorage.getItem("repeatPassword")
+};
