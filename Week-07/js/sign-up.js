@@ -503,7 +503,6 @@ submitButton.onclick = function(event) {
                 localStorage.setItem("repeatPassword", repeatPassInput.value)
             }
             alert(data.msg)
-            console.log(data)
         })
         .catch(error => alert(error))
     }

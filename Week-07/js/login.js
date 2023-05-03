@@ -159,7 +159,6 @@ submitButton.onclick = function(event) {
                 localStorage.setItem("password", passwordInput.value)
             }
                 alert(data.msg)
-                console.log(data)
         })
         .catch(error => alert(error))
     }
